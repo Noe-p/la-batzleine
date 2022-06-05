@@ -1,0 +1,15 @@
+{
+  "langage": "fr",
+  "home": {
+    "title": "Bienvenu sur le starter-template ! 👋",
+    "link": "A propos"
+  },
+  "about": {
+    "title": "A propos",
+    "subtitle": "C'est la page à propos",
+    "link": "Retour à l'accueil"
+  },
+  "common": {
+    "loading": "Loading..."
+  }
+}
