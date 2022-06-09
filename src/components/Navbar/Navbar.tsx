@@ -2,23 +2,30 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useModal } from '../../hooks';
 import { ROUTES } from '../../routing';
-import { colors, MEDIA_QUERIES } from '../../themes';
-import { Menu } from '../Menu';
+import { colors, fontFamily, fontSizes, MEDIA_QUERIES } from '../../themes';
+import { FullScreenMenu, LinkMenuType } from '../FullScreenMenu';
 
 export function Navbar(): JSX.Element {
-  const { isMenuOpen, toggleMenu } = useModal();
-  const [isMenuAnimate, setIsMenuAnimate] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const linksList: LinkMenuType[] = [
+    {
+      label: 'La maison',
+      image: '/images/home-cinema.png',
+      routes: ROUTES.home,
+    },
+    { label: 'City Garden', image: '/images/salon.png', routes: ROUTES.about },
+    { label: 'About', image: '/images/home-cinema.png', routes: '#' },
+    { label: 'Contact', image: '/images/salon.png', routes: '#' },
+    {
+      label: 'Reserver',
+      image: '/images/home-cinema.png',
+      routes: '#',
+    },
+  ];
 
   function onClick() {
-    if (isMenuOpen) {
-      setIsMenuAnimate(false);
-      setTimeout(toggleMenu, 600);
-    } else {
-      setIsMenuAnimate(true);
-      toggleMenu();
-    }
+    setIsMenuOpen(!isMenuOpen);
   }
   return (
     <>
@@ -44,7 +51,15 @@ export function Navbar(): JSX.Element {
           <div className={`bottomBorder ${isMenuOpen ? 'isOpen' : ''}`} />
         </MenuButton>
       </NavBarStyled>
-      <Menu isMenuAnimate={isMenuAnimate} isMenuOpen={isMenuOpen} />
+      <FullScreenMenu
+        backgroundColor={colors.spcaceCadet}
+        transparentBackgroundColor={colors.spcaceCadetTransparent}
+        linksList={linksList}
+        isMenuOpen={isMenuOpen}
+        titleColor={colors.white}
+        titleFontSize={fontSizes.xxl}
+        titleFontfamily={fontFamily.cormorant}
+      />
     </>
   );
 }

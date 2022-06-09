@@ -7,7 +7,7 @@ export const MEDIA_QUERIES = {
 
 export const colors = {
   black: 'rgb(10, 10, 10)',
-  blackTransparent: 'rgba(10, 10, 10, 1)',
+  blackTransparent: 'rgba(10, 10, 10, 0.5)',
   white: 'rgb(255, 255, 255)',
   spcaceCadet: 'rgb(43, 58, 103)',
   spcaceCadetTransparent: 'rgba(43, 58, 103, 0.5)',
