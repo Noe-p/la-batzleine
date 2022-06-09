@@ -15,7 +15,9 @@ export const colors = {
 
 export const fontSizes = {
   xxl: '100px',
-  xl: '40px',
+  xl: '45px',
+  l: '30px',
+  mobxxl: '13vw',
 };
 
 export const fontFamily = {

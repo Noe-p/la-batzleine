@@ -1,9 +1,11 @@
 /* eslint-disable indent */
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { FullModal } from '../../../components/Modals';
-import { colors, fontFamily, fontSizes } from '../../../themes';
+import { ROUTES } from '../../../routing';
+import { colors, fontFamily, fontSizes, MEDIA_QUERIES } from '../../../themes';
 
 interface MenuProps {
   isMenuOpen: boolean;
@@ -14,36 +16,28 @@ export function Menu(props: MenuProps): JSX.Element {
   const { isMenuOpen, isMenuAnimate } = props;
   const [isMouseOnTitle, setIsMouseOnTitle] = useState(false);
   const [isMenuAnimationFinish, setIsMenuAnimationFinish] = useState(false);
-  const imageContainer = useRef(null);
+  const imageContainer = useRef<HTMLHeadingElement>(null);
+  const router = useRouter();
 
   const linksList = [
     {
       label: 'La maison',
       image: 'home-cinema.png',
-      href: '#',
-      isCurrent: true,
+      routes: ROUTES.home,
     },
-    { label: 'City Garden', image: 'salon.png', href: '#', isCurrent: false },
-    { label: 'About', image: 'home-cinema.png', href: '#', isCurrent: false },
-    { label: 'Contact', image: 'salon.png', href: '#', isCurrent: false },
+    { label: 'City Garden', image: 'salon.png', routes: ROUTES.about },
+    { label: 'About', image: 'home-cinema.png', routes: '#' },
+    { label: 'Contact', image: 'salon.png', routes: '#' },
     {
       label: 'Reserver',
       image: 'home-cinema.png',
-      href: '#',
-      isCurrent: false,
+      routes: '#',
     },
   ];
 
-  function onMouseOnTitle(index: number) {
-    setIsMouseOnTitle(true);
-    imageContainer.current?.children[index].children[0].classList.add(
-      'backgroundVisible'
-    );
-  }
-
-  function OnMouseOutTitle(index: number) {
-    setIsMouseOnTitle(false);
-    imageContainer.current?.children[index].children[0].classList.remove(
+  function onMouseHover(index: number) {
+    setIsMouseOnTitle(!isMouseOnTitle);
+    imageContainer.current?.children[index].children[0].classList.toggle(
       'backgroundVisible'
     );
   }
@@ -74,11 +68,11 @@ export function Menu(props: MenuProps): JSX.Element {
         <TitleContainer $isAnimate={isMenuOpen}>
           {linksList.map((link, i) => (
             <a
-              onMouseOut={() => OnMouseOutTitle(i)}
-              onMouseOver={() => onMouseOnTitle(i)}
+              onMouseOut={() => onMouseHover(i)}
+              onMouseOver={() => onMouseHover(i)}
               key={link.label}
-              href={link.href}
-              className={link.isCurrent ? 'currentTitle' : ''}
+              href={link.routes}
+              className={router.asPath === link.routes ? 'currentTitle' : ''}
             >
               {link.label}
             </a>
@@ -143,7 +137,7 @@ const TitleContainer = styled.div`
     opacity: 0.4;
     transition: all 0.4s;
 
-    transform: translateY(-150px);
+    transform: translateY(-100px);
     animation: ${(props: { $isAnimate: boolean }) =>
       props.$isAnimate ? 'translateYTitleIn' : 'none'};
     animation-fill-mode: forwards;
@@ -152,6 +146,12 @@ const TitleContainer = styled.div`
     &.currentTitle,
     :hover {
       opacity: 1;
+    }
+
+    @media ${MEDIA_QUERIES.MOBILE} {
+      font-size: ${fontSizes.mobxxl};
+      line-height: ${fontSizes.mobxxl};
+      margin-top: 35px;
     }
 
     :after {
@@ -191,12 +191,18 @@ const TitleContainer = styled.div`
     }
 
     @keyframes translateYIn {
+      from {
+        height: 100%;
+      }
       to {
         height: 0%;
       }
     }
 
     @keyframes translateYTitleIn {
+      from {
+        transform: translateY(-100px);
+      }
       to {
         transform: translateY(0);
       }

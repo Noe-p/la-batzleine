@@ -1,21 +1,15 @@
 /* eslint-disable indent */
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors } from '../../themes';
+import { Menu } from '../../container/components';
+import { useModal } from '../../hooks';
+import { ROUTES } from '../../routing';
+import { colors, MEDIA_QUERIES } from '../../themes';
 
-interface NavbarProps {
-  isMenuOpen: boolean;
-  toggleMenu: () => void;
-  setIsMenuAnimate: (ele: boolean) => void;
-}
-
-interface StyledProps {
-  $isOpen: boolean;
-}
-
-export function Navbar(props: NavbarProps): JSX.Element {
-  const { isMenuOpen, toggleMenu, setIsMenuAnimate } = props;
+export function Navbar(): JSX.Element {
+  const { isMenuOpen, toggleMenu } = useModal();
+  const [isMenuAnimate, setIsMenuAnimate] = useState(true);
 
   function onClick() {
     if (isMenuOpen) {
@@ -27,28 +21,35 @@ export function Navbar(props: NavbarProps): JSX.Element {
     }
   }
   return (
-    <Main>
-      <a className='logo' href='#' onClick={isMenuOpen ? onClick : undefined}>
-        <Image
-          src={
-            isMenuOpen
-              ? '/logos/logo-baleine-white.svg'
-              : '/logos/logo-baleine-black.svg'
-          }
-          width={70}
-          height={70}
-          alt='logo'
-        />
-      </a>
-      <MenuButton $isOpen={isMenuOpen} onClick={onClick}>
-        <div className={`topBorder ${isMenuOpen ? 'isOpen' : ''}`} />
-        <div className={`bottomBorder ${isMenuOpen ? 'isOpen' : ''}`} />
-      </MenuButton>
-    </Main>
+    <>
+      <NavBarStyled>
+        <a
+          className='logo'
+          href={ROUTES.home}
+          onClick={isMenuOpen ? onClick : undefined}
+        >
+          <Image
+            src={
+              isMenuOpen
+                ? '/logos/logo-baleine-white.svg'
+                : '/logos/logo-baleine-black.svg'
+            }
+            width={70}
+            height={70}
+            alt='logo'
+          />
+        </a>
+        <MenuButton $isMenuOpen={isMenuOpen} onClick={onClick}>
+          <div className={`topBorder ${isMenuOpen ? 'isOpen' : ''}`} />
+          <div className={`bottomBorder ${isMenuOpen ? 'isOpen' : ''}`} />
+        </MenuButton>
+      </NavBarStyled>
+      <Menu isMenuAnimate={isMenuAnimate} isMenuOpen={isMenuOpen} />
+    </>
   );
 }
 
-const Main = styled.div`
+const NavBarStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,6 +60,10 @@ const Main = styled.div`
   width: 90vw;
   height: 100px;
   z-index: 100000;
+
+  @media ${MEDIA_QUERIES.MOBILE} {
+    height: 110px;
+  }
 
   a {
     text-decoration: none;
@@ -77,7 +82,8 @@ const Main = styled.div`
 
 const MenuButton = styled.a`
   position: relative;
-  height: ${(props: StyledProps) => (props.$isOpen ? '40px' : '13px')};
+  height: ${(props: { $isMenuOpen: boolean }) =>
+    props.$isMenuOpen ? '40px' : '13px'};
   width: 40px;
 
   &:hover {
@@ -91,8 +97,8 @@ const MenuButton = styled.a`
     display: block;
     width: 100%;
     height: 2px;
-    background-color: ${(props: StyledProps) =>
-      props.$isOpen ? colors.white : colors.black};
+    background-color: ${(props: { $isMenuOpen: boolean }) =>
+      props.$isMenuOpen ? colors.white : colors.black};
     transform: rotate(0);
     transition: transform 0.3s;
   }
