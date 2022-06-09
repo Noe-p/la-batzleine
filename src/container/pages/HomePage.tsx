@@ -1,30 +1,23 @@
 import { useTranslation } from 'next-i18next';
-import router from 'next/dist/client/router';
 import React from 'react';
 import styled from 'styled-components';
-import { StyledLink } from '../../components';
-import { ROUTES } from '../../routing';
+import { Navbar, Title } from '../../components';
+import { colors } from '../../themes';
+import { HomeHeader } from '../components';
 
 export function HomePage(): JSX.Element {
   const { t } = useTranslation();
 
   return (
     <Main>
-      {t('langage')}
-      <h1>{t('home.title')}</h1>
-
-      <StyledLink onClick={() => router.push(ROUTES.about)}>
-        <p>{t('home.link')}</p>
-      </StyledLink>
-      <StyledLink onClick={() => router.push(ROUTES.dynamicPage)}>
-        <p>{t('dynamicPage')}</p>
-      </StyledLink>
+      <Navbar />
+      <HomeHeader>
+        <Title color={colors.black}>{t('La Batzleine')}</Title>
+      </HomeHeader>
     </Main>
   );
 }
 
 const Main = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  z-index: 0;
 `;
