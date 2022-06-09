@@ -20,5 +20,4 @@ const Main = styled.div`
   justify-content: center;
   background-color: ${colors.white};
   height: 100vh;
-  width: 100vw;
 `;

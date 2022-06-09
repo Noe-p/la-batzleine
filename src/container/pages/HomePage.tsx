@@ -20,4 +20,6 @@ export function HomePage(): JSX.Element {
 
 const Main = styled.div`
   z-index: 0;
+  height: 300vh;
+  background-color: teal;
 `;

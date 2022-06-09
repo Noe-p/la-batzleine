@@ -3,9 +3,9 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { FullModal } from '../../../components/Modals';
-import { ROUTES } from '../../../routing';
-import { colors, fontFamily, fontSizes, MEDIA_QUERIES } from '../../../themes';
+import { ROUTES } from '../../routing';
+import { colors, fontFamily, fontSizes, MEDIA_QUERIES } from '../../themes';
+import { FullModal } from '../Modals';
 
 interface MenuProps {
   isMenuOpen: boolean;

@@ -2,10 +2,10 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Menu } from '../../container/components';
 import { useModal } from '../../hooks';
 import { ROUTES } from '../../routing';
 import { colors, MEDIA_QUERIES } from '../../themes';
+import { Menu } from '../Menu';
 
 export function Navbar(): JSX.Element {
   const { isMenuOpen, toggleMenu } = useModal();
