@@ -151,7 +151,8 @@ const TitleContainer = styled.div`
     @media ${MEDIA_QUERIES.MOBILE} {
       font-size: ${fontSizes.mobxxl};
       line-height: ${fontSizes.mobxxl};
-      margin-top: 35px;
+      margin-top: 15px;
+      margin-bottom: 15px;
     }
 
     :after {
