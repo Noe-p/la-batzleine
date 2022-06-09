@@ -59,6 +59,7 @@ export function Navbar(): JSX.Element {
         titleColor={colors.white}
         titleFontSize={fontSizes.xxl}
         titleFontfamily={fontFamily.cormorant}
+        setIsMenuOpen={setIsMenuOpen}
       />
     </>
   );

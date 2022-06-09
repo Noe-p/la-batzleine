@@ -8,6 +8,7 @@ import { FullModal } from './Modals';
 
 interface FullScreenMenuProps {
   isMenuOpen: boolean;
+  setIsMenuOpen: (ele: boolean) => void;
 
   titleAnimationSpeed?: number;
   openModalAnimationDuration?: number;
@@ -27,6 +28,7 @@ interface FullScreenMenuProps {
 export function FullScreenMenu(props: FullScreenMenuProps): JSX.Element {
   const {
     isMenuOpen,
+    setIsMenuOpen,
     titleAnimationSpeed = 0.4,
     titleAnimationDelay = 0.4,
     horizontalSlide = -100,
@@ -53,6 +55,14 @@ export function FullScreenMenu(props: FullScreenMenuProps): JSX.Element {
     imageContainer.current?.children[index].children[0].classList.toggle(
       'backgroundVisible'
     );
+  }
+
+  function onLinkClick(href: string) {
+    setIsMenuOpen(false);
+    setTimeout(() => {
+      setIsMenuAnimationFinish(false);
+      router.push(href);
+    }, openModalAnimationDuration * 1000);
   }
 
   function titleAnimationCSS() {
@@ -137,8 +147,8 @@ export function FullScreenMenu(props: FullScreenMenuProps): JSX.Element {
               onMouseOut={() => onMouseHover(i)}
               onMouseOver={() => onMouseHover(i)}
               key={link.label}
-              href={link.routes}
               className={router.asPath === link.routes ? 'currentTitle' : ''}
+              onClick={() => onLinkClick(link.routes)}
             >
               {link.label}
             </a>
@@ -232,6 +242,7 @@ const TitleContainer = styled.div`
     &.currentTitle,
     :hover {
       opacity: 1;
+      cursor: pointer;
     }
 
     @media (max-width: 750px) {
