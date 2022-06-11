@@ -1,10 +1,10 @@
 /* eslint-disable indent */
+import { FullScreenMenu, LinkMenuType } from '@noe-p/react-components';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { ROUTES } from '../../routing';
 import { colors, fontFamily, fontSizes, MEDIA_QUERIES } from '../../themes';
-import { FullScreenMenu, LinkMenuType } from '../FullScreenMenu';
 
 export function Navbar(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

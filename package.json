@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "@noe-p/react-components": "^1.0.0",
     "axios": "^0.21.1",
     "next": "latest",
     "next-i18next": "^8.2.0",

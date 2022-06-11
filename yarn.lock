@@ -306,6 +306,13 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
+"@noe-p/react-components@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@noe-p/react-components/-/react-components-1.0.0.tgz#c8a675866fc279bc71c211def5a02f500c99bc92"
+  integrity sha512-TCypMWHwtesKOMFnwfwW6DCt4Q7GIqUd4TQXSIn/a8W6i2n5g5jVotjjQTdPWzlY84d55ho8ef4/KvfDQst7MQ==
+  dependencies:
+    styled-components "^5.3.5"
+
 "@opentelemetry/api@0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@opentelemetry/api/-/api-0.14.0.tgz#4e17d8d2f1da72b19374efa7b6526aa001267cae"
