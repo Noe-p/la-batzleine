@@ -1,7 +1,6 @@
 /* eslint-disable indent */
-import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { LinkMenuType } from '.';
 import { FullModal } from './Modals';
@@ -52,7 +51,7 @@ export function FullScreenMenu(props: FullScreenMenuProps): JSX.Element {
 
   function onMouseHover(index: number) {
     setIsMouseOnTitle(!isMouseOnTitle);
-    imageContainer.current?.children[index].children[0].classList.toggle(
+    imageContainer.current?.children[index].classList.toggle(
       'backgroundVisible'
     );
   }
@@ -122,12 +121,7 @@ export function FullScreenMenu(props: FullScreenMenuProps): JSX.Element {
           $backgroundZoom={backgroundZoom}
         >
           {linksList.map((link) => (
-            <Image
-              layout='fill'
-              key={link.label}
-              src={link.image}
-              alt={link.image}
-            />
+            <img key={link.label} src={link.image} alt={link.image} />
           ))}
         </Background>
 
@@ -193,10 +187,14 @@ const Background = styled.div`
   height: 100%;
 
   img {
+    position: absolute;
+    top: 0;
     opacity: 0;
     transform: scale(1);
     transition: all 0.5s;
     object-fit: cover;
+    height: 100%;
+    width: 100%;
     visibility: hidden;
 
     &.backgroundVisible {

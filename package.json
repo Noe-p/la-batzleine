@@ -19,16 +19,12 @@
     ]
   },
   "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.8.2",
-    "@mui/material": "^5.8.2",
-    "@mui/styled-engine-sc": "^5.8.0",
     "axios": "^0.21.1",
     "next": "latest",
     "next-i18next": "^8.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^6.3.0",
     "sharp": "^0.29.3",
     "styled-components": "^5.3.5"
   },
@@ -37,7 +33,6 @@
     "@types/jest": "^27.0.1",
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.1",
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
