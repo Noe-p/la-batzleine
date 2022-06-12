@@ -1,5 +1,7 @@
 /* eslint-disable indent */
-import { FullScreenMenu, LinkMenuType } from '@noe-p/react-components';
+
+import { ToggleMenuButton } from '@noe-p/react-buttons-components';
+import { FullScreenMenu, LinkMenuType } from '@noe-p/react-menus-components';
 import Image from 'next/image';
 import { useState } from 'react';
 import styled from 'styled-components';
@@ -46,10 +48,13 @@ export function Navbar(): JSX.Element {
             alt='logo'
           />
         </a>
-        <MenuButton $isMenuOpen={isMenuOpen} onClick={onClick}>
-          <div className={`topBorder ${isMenuOpen ? 'isOpen' : ''}`} />
-          <div className={`bottomBorder ${isMenuOpen ? 'isOpen' : ''}`} />
-        </MenuButton>
+        <ToggleMenuButton
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+          colorOpen={colors.white}
+          colorClose={colors.black}
+          width={50}
+        />
       </NavBarStyled>
       <FullScreenMenu
         backgroundColor={colors.spcaceCadet}
@@ -93,46 +98,5 @@ const NavBarStyled = styled.div`
 
   .logo:hover {
     transform: rotate(360deg);
-  }
-`;
-
-const MenuButton = styled.a`
-  position: relative;
-  height: ${(props: { $isMenuOpen: boolean }) =>
-    props.$isMenuOpen ? '40px' : '13px'};
-  width: 40px;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  .topBorder,
-  .bottomBorder {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: ${(props: { $isMenuOpen: boolean }) =>
-      props.$isMenuOpen ? colors.white : colors.black};
-    transform: rotate(0);
-    transition: transform 0.3s;
-  }
-
-  .topBorder {
-    top: 0;
-
-    &.isOpen {
-      transform: rotate(45deg);
-      top: 50%;
-    }
-  }
-  .bottomBorder {
-    top: 100%;
-
-    &.isOpen {
-      transform: rotate(-45deg);
-      top: 50%;
-    }
   }
 `;
