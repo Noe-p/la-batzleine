@@ -1,5 +1,4 @@
 import { useTranslation } from 'next-i18next';
-import React from 'react';
 import styled from 'styled-components';
 import { Navbar, Title } from '../../components';
 import { colors } from '../../themes';
@@ -12,14 +11,19 @@ export function HomePage(): JSX.Element {
     <Main>
       <Navbar />
       <HomeHeader>
-        <Title color={colors.black}>{t('La Batzleine')}</Title>
+        <Title color={colors.white}>{t('La Batzleine')}</Title>
       </HomeHeader>
+      <Container />
     </Main>
   );
 }
 
 const Main = styled.div`
   z-index: 0;
+`;
+
+const Container = styled.div`
   height: 300vh;
+  width: 100vw;
   background-color: teal;
 `;

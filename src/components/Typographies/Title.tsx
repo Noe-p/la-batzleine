@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import styled from 'styled-components';
-import { fontFamily, fontSizes } from '../../themes';
+import { fontFamily, fontSizes, MEDIA_QUERIES } from '../../themes';
 
 interface TitleProps {
   children?: ReactNode;
@@ -14,7 +14,6 @@ interface StyledProps {
 
 export function Title(props: TitleProps): JSX.Element {
   const { children, className, color } = props;
-
   return (
     <Main $color={color} className={className}>
       {children}
@@ -24,6 +23,11 @@ export function Title(props: TitleProps): JSX.Element {
 
 const Main = styled.h1`
   color: ${(props: StyledProps) => props.$color};
-  font-size: ${fontSizes.xl};
+  font-size: ${fontSizes.xxl};
   font-family: ${fontFamily.cormorant};
+  font-weight: normal;
+
+  @media ${MEDIA_QUERIES.MOBILE} {
+    font-size: ${fontSizes.mobxxl};
+  }
 `;

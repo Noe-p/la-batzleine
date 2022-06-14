@@ -1,8 +1,7 @@
 /* eslint-disable indent */
 
-import { ToggleMenuButton } from '@noe-p/react-buttons-components';
+import { ToggleTextButton } from '@noe-p/react-buttons-components';
 import { FullScreenMenu, LinkMenuType } from '@noe-p/react-menus-components';
-import Image from 'next/image';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { ROUTES } from '../../routing';
@@ -10,50 +9,48 @@ import { colors, fontFamily, fontSizes, MEDIA_QUERIES } from '../../themes';
 
 export function Navbar(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [delay, setDelay] = useState(false);
   const linksList: LinkMenuType[] = [
     {
       label: 'La maison',
       image: '/images/home-cinema.png',
-      routes: ROUTES.home,
+      route: ROUTES.home,
     },
-    { label: 'City Garden', image: '/images/salon.png', routes: ROUTES.about },
-    { label: 'About', image: '/images/home-cinema.png', routes: '#' },
-    { label: 'Contact', image: '/images/salon.png', routes: '#' },
+    { label: 'City Garden', image: '/images/salon.png', route: ROUTES.about },
+    { label: 'About', image: '/images/home-cinema.png', route: '#' },
+    { label: 'Contact', image: '/images/salon.png', route: '#' },
     {
       label: 'Reserver',
       image: '/images/home-cinema.png',
-      routes: '#',
+      route: '#',
     },
   ];
 
-  function onClick() {
+  function onPressMenu() {
     setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) setTimeout(() => setDelay(!delay), 500);
+    else setTimeout(() => setDelay(!delay), 0);
   }
+
   return (
     <>
-      <NavBarStyled>
-        <a
-          className='logo'
-          href={ROUTES.home}
-          onClick={isMenuOpen ? onClick : undefined}
-        >
-          <Image
-            src={
-              isMenuOpen
-                ? '/logos/logo-baleine-white.svg'
-                : '/logos/logo-baleine-black.svg'
-            }
+      <NavBarStyled $isMenuOpen={delay}>
+        <a className='logo' href={ROUTES.home}>
+          <img
+            src={'/logos/logo-baleine-black.svg'}
             width={70}
             height={70}
             alt='logo'
           />
         </a>
-        <ToggleMenuButton
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-          colorOpen={colors.white}
-          colorClose={colors.black}
-          width={50}
+        <ToggleTextButton
+          onClick={onPressMenu}
+          isMenuOpen={delay}
+          closeColor={'white'}
+          openColor={'white'}
+          fontFamily={fontFamily.cormorant}
+          textClose={'Fermer'}
+          mobileFontSize={'30px'}
         />
       </NavBarStyled>
       <FullScreenMenu
@@ -70,7 +67,7 @@ export function Navbar(): JSX.Element {
   );
 }
 
-const NavBarStyled = styled.div`
+const NavBarStyled = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -93,7 +90,11 @@ const NavBarStyled = styled.div`
   .logo {
     transform: rotate(0);
     transition: 0.9s;
+    transition-property: transform;
     transition-timing-function: ease-in-out;
+    filter: invert(100%);
+    /* filter: ${(props: { $isMenuOpen: boolean }) =>
+      props.$isMenuOpen ? 'invert(100%)' : 'invert(0)'}; */
   }
 
   .logo:hover {
