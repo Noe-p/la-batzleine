@@ -1,14 +1,14 @@
-import { ReactNode, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { Title } from '../../../components';
 import { colors } from '../../../themes';
 
 interface HomeHeaderProps {
-  children?: ReactNode;
   className?: string;
 }
 
 export function HomeHeader(props: HomeHeaderProps): JSX.Element {
-  const { children, className } = props;
+  const { className } = props;
   const vidRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     vidRef?.current?.play();
@@ -26,26 +26,28 @@ export function HomeHeader(props: HomeHeaderProps): JSX.Element {
       >
         <source src='/videos/videoHeader.mp4' type='video/mp4' />
       </video>
-      <div className='filter'>{children}</div>
+      <Header>
+        <Title color={colors.white}>{'La Batzleine'}</Title>
+      </Header>
     </Main>
   );
 }
 
+const Header = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${colors.spcaceCadetTransparent};
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+`;
+
 const Main = styled.div`
   display: flex;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
-
-  .filter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: ${colors.spcaceCadetTransparent};
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-  }
 
   video {
     object-fit: cover;

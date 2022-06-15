@@ -295,18 +295,18 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@noe-p/react-buttons-components@^2.7.8":
-  version "2.7.8"
-  resolved "https://registry.yarnpkg.com/@noe-p/react-buttons-components/-/react-buttons-components-2.7.8.tgz#7b88c7d4fe523099df0ffc63621a1db185d5245c"
-  integrity sha512-te8jBrz6PwzQcGVzcTV8Ycrp7tvzpWIAOBZ+yfOcFjDLxsDTqanIb8AMbPoWq1G7Csf9pbRLlmiZQvUA1o+DuA==
+"@noe-p/react-buttons-components@^2.7.9":
+  version "2.7.9"
+  resolved "https://registry.yarnpkg.com/@noe-p/react-buttons-components/-/react-buttons-components-2.7.9.tgz#3130842b14ce75e6c90f4ec16d8e61162753ad80"
+  integrity sha512-NDyi7rRgSNz9j8v2LNsOa2aS7WFg2JpYcr3+bLGZeK+81C95VxPyp/F0bI+S5VkqbM2iaGgNlKXPGknp1lDKIA==
   dependencies:
     "@types/styled-components" "^5.1.25"
     styled-components "^5.3.5"
 
-"@noe-p/react-menus-components@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@noe-p/react-menus-components/-/react-menus-components-3.0.1.tgz#e5a3361b126a2e0de89684c3a37469c4b005302d"
-  integrity sha512-pXeXsaMH1TZVxo8QOdz6wyNQ66/CwXy6QCODnGLJzy4pbL9cM4LiRiOrLHhAU91rwrZIzZeyFM1qfd4qZwWu1A==
+"@noe-p/react-menus-components@^3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@noe-p/react-menus-components/-/react-menus-components-3.0.5.tgz#a91cb0f9ffb1c0758be2b10f04ed2b321cb60821"
+  integrity sha512-9a44R+nsczg5d7+YjHz7JbetdZaZDTF0i2TZoCgRrqMQI9x9FfhtK+QaX8FcWW8ciGZioFBJRpPpGsto58gl7w==
   dependencies:
     "@types/styled-components" "^5.1.25"
     styled-components "^5.3.5"
@@ -344,10 +344,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
-"@types/node@^17.0.42":
-  version "17.0.42"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.42.tgz#d7e8f22700efc94d125103075c074396b5f41f9b"
-  integrity sha512-Q5BPGyGKcvQgAMbsr7qEGN/kIPN6zZecYYABeTDBizOsau+2NMdSVTar9UQw21A2+JyA2KRNDYaYrPB0Rpk2oQ==
+"@types/node@^17.0.43":
+  version "17.0.43"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.43.tgz#7f16898cdd791c9d64069000ad448b47b3ca8353"
+  integrity sha512-jnUpgw8fL9kP2iszfIDyBQtw5Mf4/XSqy0Loc1J9pI14ejL83XcCEvSf50Gs/4ET0I9VCCDoOfufQysj0S66xA==
 
 "@types/prop-types@*":
   version "15.7.5"
@@ -685,9 +685,9 @@ camelize@^1.0.0:
   integrity sha512-W2lPwkBkMZwFlPCXhIlYgxu+7gC/NUlCtdK652DAJ1JdgV0sTrvuPFshNPrFa1TY2JOkLhgdeEBplB4ezEa+xg==
 
 caniuse-lite@^1.0.30001332:
-  version "1.0.30001352"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001352.tgz#cc6f5da3f983979ad1e2cdbae0505dccaa7c6a12"
-  integrity sha512-GUgH8w6YergqPQDGWhJGt8GDRnY0L/iJVQcU3eJ46GYf52R8tk0Wxp0PymuFVZboJYXGiCqwozAYZNRjVj6IcA==
+  version "1.0.30001354"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001354.tgz#95c5efdb64148bb4870771749b9a619304755ce5"
+  integrity sha512-mImKeCkyGDAHNywYFA4bqnLAzTUvVkqPvhY4DV47X+Gl2c5Z8c3KNETnXp14GQt11LvxE8AwjzGxJ+rsikiOzg==
 
 chalk@^2.0.0:
   version "2.4.2"
