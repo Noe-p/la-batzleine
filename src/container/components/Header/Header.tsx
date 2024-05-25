@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import tw from 'tailwind-styled-components';
 import { NavKeys } from '../Navbar';
 import { JARDIN } from '@/data';
+import { Image } from '@/components';
 
 interface HeaderProps {
   className?: string;
@@ -23,7 +24,9 @@ export function Header(props: HeaderProps): React.JSX.Element {
   return (
     <Main id={NavKeys.HOME} className={className}>
       <Filter />
-      <ImageBackground style={{ backgroundImage: `url(${JARDIN[0].src})` }} />
+      <ImageBackground>
+        <Image {...JARDIN[0]} />
+      </ImageBackground>
       <Title $isAnimated={isAnimated}>{t('header.name')}</Title>
       <SubTitle $isAnimated={isAnimated}>{t('header.subTitle')}</SubTitle>
     </Main>
@@ -67,9 +70,10 @@ const ImageBackground = tw.div`
 
 const Title = tw(H1)<{ $isAnimated: boolean }>`
   text-white
+  text-4xl
   lg:text-[150px]
   md:text-[100px]
-  text-[70px]
+  text-[80px]
   text-center
   transform
   transition-all

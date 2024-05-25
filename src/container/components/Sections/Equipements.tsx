@@ -87,7 +87,6 @@ const TextContainer = tw(Grid2)`
   border-primary-foreground
   md:p-10
   rounded
-  h-fit
   mt-10
 `;
 
