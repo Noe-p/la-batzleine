@@ -1,0 +1,21 @@
+{
+  "language": "en",
+  "home": {
+    "name": "La Batzleine",
+    "subTitle": "This is the home page",
+    "title": "Welcome to the starter-template! 👋",
+    "link": "About"
+  },
+  "equipements": {
+    "list": {
+      "item1": "Cheminée/poêle",
+      "item2": "Congélateur",
+      "item3": "Lave linge privatif",
+      "item4": "Lave vaisselle",
+      "item5": "Micro-ondes",
+      "item6": "Réfrigérateur",
+      "item7": "Sèche linge privatif",
+      "item8": "Clef Wifi"
+    }
+  }
+}

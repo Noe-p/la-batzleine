@@ -1,0 +1,45 @@
+{
+  "langage": "fr",
+  "generics": {
+    "copyright": "Copyright © 2023 - Starter-template - Tous droits réservés",
+    "designed": "Conçu et développé par ",
+    "logout": "Déconnexion",
+    "next": "Suivant",
+    "back": "Retour",
+    "login": "Se connecter",
+    "register": "S'inscrire",
+    "step": "Étape",
+    "update": "Mettre à jour",
+    "cancel": "Annuler",
+    "add": "Ajouter",
+    "more": "En voir plus"
+  },
+  "header": {
+    "name": "Ti Ar Liorzh",
+    "subTitle": "Évasion à l'Île de Batz : Confort Élégant et Vue Panoramique sur la Mer"
+  },
+  "description": {
+    "content1": "Baie vitrée de 4,50m avec vue sur mer dans pièce à vivre et cuisine. Une décoration originale et soignée. Au rez-de-chaussée : pièce à vivre de 40m² avec poêle sur cuisine ouverte toute équipée. 1 chambre avec lit 2 couchages. 1 salle de bain doubles vasques et douches. Toilettes. Un cellier équipé.",
+    "content2": "A l’étage : un coin détente avec téléviseur et livres. 1 chambre avec 1 lit de 160 qui peut-être séparé en 2 lits de 80. Salle d’eau avec toilettes.",
+    "content3": "Jardin clos exposition sud-sud/ouest. Terrasse bois de 40m² exposée sud avec son salon et table de jardin. Coté ouest barbecue. Petit chemin côtier qui rejoint la plage de Porz Alliou et la mer à 150m de la maison. Calme absolu, pas de passage de véhicules."
+  },
+  "carte": {
+    "title": "Île-de-Batz",
+    "address": "Pors Alliou<br/> 29253 Île-de-Batz"
+  },
+  "testimonials": {
+    "title": "Les témoignages"
+  },
+  "equipements": {
+    "list": {
+      "item1": "Cheminée/poêle",
+      "item2": "Congélateur",
+      "item3": "Lave linge privatif",
+      "item4": "Lave vaisselle",
+      "item5": "Micro-ondes",
+      "item6": "Réfrigérateur",
+      "item7": "Sèche linge privatif",
+      "item8": "Téléviseur"
+    }
+  }
+}
