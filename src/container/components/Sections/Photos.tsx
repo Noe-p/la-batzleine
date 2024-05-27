@@ -93,7 +93,7 @@ export function Photos(): JSX.Element {
 }
 
 const Main = tw(ColCenter)`
-  py-20
+  md:py-20 py-10
 `;
 
 const Pagination = tw.div`

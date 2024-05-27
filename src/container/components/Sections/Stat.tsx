@@ -6,28 +6,28 @@ export function Stat(): JSX.Element {
   return (
     <Main>
       <ColCenter className='gap-2'>
-        <Dog size={40} />
-        <P16>{'Animaux Accepté'}</P16>
+        <Dog className='text-primary-foreground' size={40} />
+        <P16 className='text-primary-foreground'>{'Animaux Accepté'}</P16>
       </ColCenter>
       <ColCenter className='gap-2'>
-        <Users size={40} />
-        <P16>{'4 Personnes'}</P16>
+        <Users className='text-primary-foreground' size={40} />
+        <P16 className='text-primary-foreground'>{'4 Personnes'}</P16>
       </ColCenter>
       <ColCenter className='gap-2'>
-        <Bed size={40} />
-        <P16>{'2 Chambres'}</P16>
+        <Bed className='text-primary-foreground' size={40} />
+        <P16 className='text-primary-foreground'>{'2 Chambres'}</P16>
       </ColCenter>
       <ColCenter className='gap-2'>
-        <Wifi size={40} />
-        <P16>{'Clée Wifi'}</P16>
+        <Wifi className='text-primary-foreground' size={40} />
+        <P16 className='text-primary-foreground'>{'Clée Wifi'}</P16>
       </ColCenter>
     </Main>
   );
 }
 
 const Main = tw(Grid4)`
-  bg-card
-  my-20
+  bg-primary
+  md:my-20 mb-10
   p-8
   rounded-lg
   shadow-lg

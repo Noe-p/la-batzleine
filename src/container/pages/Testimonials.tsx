@@ -41,7 +41,7 @@ export function Testimonials(): React.JSX.Element {
                   dangerouslySetInnerHTML={{ __html: testimonial.content }}
                 />
                 <Row className='justify-end mt-5'>
-                  <P12 className='italic'>{`${testimonial.name}${
+                  <P12 className='italic'>{`${testimonial?.name ?? ''}${
                     testimonial?.date && ', '
                   }${testimonial?.date}`}</P12>
                 </Row>

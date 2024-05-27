@@ -14,7 +14,7 @@ export function Tarifs(): JSX.Element {
             {'Semaine (meublé) :'}
           </P16>
           <P14 className='text-primary-foreground'>
-            {'de 700,00€ à 950,00€ (CC)'}
+            {'de 750,00€ à 950,00€ (CC)'}
           </P14>
         </ColCenter>
         <ColCenter className='md:gap-2'>
@@ -27,13 +27,13 @@ export function Tarifs(): JSX.Element {
           <P16 className='font-semibold text-primary-foreground'>
             {'Semaine Juin/Septembre :'}
           </P16>
-          <P14 className='text-primary-foreground'>{'800,00 € (CC)'}</P14>
+          <P14 className='text-primary-foreground'>{'850,00 € (CC)'}</P14>
         </ColCenter>
         <ColCenter className='md:gap-2'>
           <P16 className='font-semibold text-primary-foreground'>
             {'Semaine Hors Saison :'}
           </P16>
-          <P14 className='text-primary-foreground'>{'700,00 €'}</P14>
+          <P14 className='text-primary-foreground'>{'750,00 €'}</P14>
         </ColCenter>
       </RowStyled>
     </Main>
@@ -41,7 +41,7 @@ export function Tarifs(): JSX.Element {
 }
 
 const Main = tw(ColCenter)`
-  mt-20
+  md:mt-20 mt-10
 `;
 
 const RowStyled = tw(Grid4)`

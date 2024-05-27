@@ -1,10 +1,12 @@
-import { Col, Grid3, RowCenter } from '@/components';
-import { H2, Link, P14 } from '@/components/Texts';
+import { Col, RowCenter } from '@/components';
+import { H2, Link, P12, P14, Title } from '@/components/Texts';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
 import tw from 'tailwind-styled-components';
 import { NavKeys } from '../Navbar';
-import { Mail, Phone, User } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
+import { MEDIA_QUERIES } from '@/static/constants';
+import { useMediaQuery } from 'usehooks-ts';
 
 interface FooterProps {
   className?: string;
@@ -13,39 +15,26 @@ interface FooterProps {
 export function Footer(props: FooterProps): React.JSX.Element {
   const { className } = props;
   const { t } = useTranslation();
+  const isMobile = useMediaQuery(MEDIA_QUERIES.SM);
 
   return (
     <Main className={className} id={NavKeys.CONTACT}>
-      <H2>{t(`enums:${NavKeys.CONTACT}`)}</H2>
-      <Grid3 className='mt-10 w-auto md:gap-10'>
-        <RowCenter className='gap-3'>
-          <User size={25} />
-          <Col>
-            <P14>{'PHILIPPE Bernadette'}</P14>
-            <P14>{'LANSONNEUR Muriel'}</P14>
-          </Col>
-        </RowCenter>
-        <a href='mailto:nadmuriel@yahoo.fr'>
-          <RowCenter className='gap-3'>
-            <Mail size={25} />
-            <Col>
-              <P14>{'nadmuriel@yahoo.fr'}</P14>
-            </Col>
-          </RowCenter>
-        </a>
-        <RowCenter className='gap-3'>
-          <Phone size={25} />
-          <Col>
-            <a href='tel:0663001370'>
-              <P14>{'06 63 00 13 70'}</P14>
-            </a>
-            <a href='tel:0626856266'>
-              <P14>{'06 26 85 62 66'}</P14>
-            </a>
-          </Col>
-        </RowCenter>
-      </Grid3>
-      <RowCenter className='gap-1 items-center mb-3 mt-30'>
+      <H2 className='md:mb-5'>{t(`enums:${NavKeys.CONTACT}`)}</H2>
+      <ContactRow target='_blank' href='mailto:nadmuriel@yahoo.fr'>
+        <Col>
+          <Title className='text-primary'>{t('generics.email')}</Title>
+          <P12 className='text-primary'>{'nadmuriel@yahoo.fr'}</P12>
+        </Col>
+        <Mail size={isMobile ? 30 : 45} className='md:group-hover:text-red' />
+      </ContactRow>
+      <ContactRow target='_blank' href='tel:0663001370'>
+        <Col>
+          <Title className='text-primary'>{t('generics.phone')}</Title>
+          <P12 className='text-primary'>{'06 63 00 13 70'}</P12>
+        </Col>
+        <Phone size={isMobile ? 30 : 45} className='md:group-hover:text-red' />
+      </ContactRow>
+      <RowCenter className='gap-1 items-center mb-1 mt-30'>
         <CopyRight className='w-fit'>{t('generics.designed')}</CopyRight>
         <LinkStyled href='https://noe-philippe.com' target='_blank'>
           {'Noé PHILIPPE'}
@@ -71,4 +60,20 @@ const CopyRight = tw(P14)`
 
 const LinkStyled = tw(Link)`
   font-semibold
+`;
+
+const ContactRow = tw(Link)`
+  flex
+  items-center
+  justify-between
+  w-full
+  border-b
+  first:border-t
+  py-5
+  px-3
+  group
+  transition-all
+  duration-300
+  md:hover:bg-primary/10
+  rounded
 `;

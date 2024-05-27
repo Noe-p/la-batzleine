@@ -27,7 +27,7 @@ export function Header(props: HeaderProps): React.JSX.Element {
       <ImageBackground>
         <Image {...JARDIN[0]} />
       </ImageBackground>
-      <Title $isAnimated={isAnimated}>{t('header.name')}</Title>
+      <Title $isAnimated={isAnimated}>{t('enums:HOME')}</Title>
       <SubTitle $isAnimated={isAnimated}>{t('header.subTitle')}</SubTitle>
     </Main>
   );

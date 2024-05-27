@@ -59,7 +59,7 @@ export function Testimonials(): JSX.Element {
           </Row>
         )}
         <CarouselContent className='gap-5 mt-3 -ml-0'>
-          {TESTIMONIALS.slice(0, 5).map((testimonial) => (
+          {TESTIMONIALS.slice(0, 10).map((testimonial) => (
             <Card key={testimonial.id}>
               <Quote className='w-6 h-6 text-primary' />
               <P14

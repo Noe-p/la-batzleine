@@ -14,8 +14,10 @@ export function Layout(props: LayoutProps): React.JSX.Element {
   return (
     <Main>
       <NavBar isClose={isNavClose} />
-      <Page className={className}>{children}</Page>
-      <Footer />
+      <Page className={className}>
+        {children}
+        <Footer />
+      </Page>
     </Main>
   );
 }
@@ -32,5 +34,4 @@ const Page = tw.div`
   z-0
   min-h-screen
   px-3 md:px-20
-  mb-5 md:mb-20
 `;

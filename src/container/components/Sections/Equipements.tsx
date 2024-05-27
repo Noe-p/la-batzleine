@@ -19,7 +19,7 @@ export function Equipements(): JSX.Element {
 
   return (
     <Main id={NavKeys.EQUIPEMENTS}>
-      <RowBetween className='items-center gap-10 pl-10 lg:pl-0 pr-10'>
+      <RowBetween className='items-center md:gap-10 px-3 lg:pl-0'>
         <ImageStyled {...JARDIN[2]} />
         <ColCenter>
           <H2 className='text-primary-foreground'>
@@ -74,10 +74,9 @@ const Main = tw(ColCenter)`
   w-full
   justify-center
   bg-gradient-to-b from-primary to-primary/90
-
   rounded-lg
   lg:h-150
-  py-20 lg:py-0
+  py-10 lg:py-0
   overflow-hidden
 `;
 
@@ -88,11 +87,14 @@ const TextContainer = tw(Grid2)`
   md:p-10
   rounded
   mt-10
+  gap-y-0
+  grid-cols-2
+  gap-5
 `;
 
 const ColItem = tw(Col)`
-  justify-between
-  h-full
+  md:justify-between
+  md:h-full
   gap-2
 `;
 

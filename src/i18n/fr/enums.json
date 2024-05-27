@@ -1,5 +1,5 @@
 {
-  "HOME": "Ti Ar Liorzh",
+  "HOME": "La Batzleine",
   "DESCRIPTION": "Description",
   "AGENCEMENT": "Agencement",
   "EQUIPEMENTS": "Équipements",
@@ -14,5 +14,5 @@
   "ETAGE2": "Étage 2",
   "CHAMBRE1": "Chambre 1",
   "CHAMBRE2": "Chambre 2",
-  "SDB1": "Salle de bain"
+  "SDB": "Salle d'eau"
 }

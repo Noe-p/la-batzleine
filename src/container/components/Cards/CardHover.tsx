@@ -48,6 +48,7 @@ const CardStyled = tw(Card)`
   cursor-pointer
   overflow-hidden
   w-full h-full
+  max-h-100
 `;
 
 const Filter = tw.div<{ $isHover: boolean }>`
@@ -65,8 +66,8 @@ const Filter = tw.div<{ $isHover: boolean }>`
 
 const Image = tw.img<{ $isHover: boolean }>`
   w-full
-  object-cover
-  h-full
+  object-fill
+  h-100
   transition-transform 
   duration-300 
   ease-in-out
@@ -111,8 +112,8 @@ const SeeMoreContainer = tw.div<{ $isHover: boolean }>`
   ${(props) => props.$isHover && 'opacity-100 translate-y-0'}
   absolute
  
-  bottom-1 md:bottom-3
-  right-1 md:right-3
+  bottom-2 md:bottom-3
+  right-2 md:right-3
   w-fit
   z-10
   bg-primary/40

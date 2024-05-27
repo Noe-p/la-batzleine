@@ -21,7 +21,8 @@ export function Description(): JSX.Element {
 
 const Main = tw(Grid2)`
   md:gap-15
-  pt-20
+  md:pt-20
+  -translate-y-20 md:translate-y-0
   justify-center
   items-center
 `;

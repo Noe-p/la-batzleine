@@ -1,7 +1,7 @@
 {
   "langage": "fr",
   "generics": {
-    "copyright": "Copyright © 2023 - Starter-template - Tous droits réservés",
+    "copyright": "Copyright © 2024 - La Batzleine - Tous droits réservés",
     "designed": "Conçu et développé par ",
     "logout": "Déconnexion",
     "next": "Suivant",
@@ -12,10 +12,11 @@
     "update": "Mettre à jour",
     "cancel": "Annuler",
     "add": "Ajouter",
-    "more": "En voir plus"
+    "more": "En voir plus",
+    "phone": "Téléphone",
+    "email": "Email"
   },
   "header": {
-    "name": "Ti Ar Liorzh",
     "subTitle": "Évasion à l'Île de Batz : Confort Élégant et Vue Panoramique sur la Mer"
   },
   "description": {
@@ -34,11 +35,11 @@
     "list": {
       "item1": "Cheminée/poêle",
       "item2": "Congélateur",
-      "item3": "Lave linge privatif",
+      "item3": "Lave linge",
       "item4": "Lave vaisselle",
       "item5": "Micro-ondes",
       "item6": "Réfrigérateur",
-      "item7": "Sèche linge privatif",
+      "item7": "Sèche linge",
       "item8": "Téléviseur"
     }
   }
