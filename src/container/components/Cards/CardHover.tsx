@@ -66,7 +66,7 @@ const Filter = tw.div<{ $isHover: boolean }>`
 
 const Image = tw.img<{ $isHover: boolean }>`
   w-full
-  object-fill
+  object-cover
   h-100
   transition-transform 
   duration-300 
