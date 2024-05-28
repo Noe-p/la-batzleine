@@ -31,6 +31,7 @@ export function Footer(props: FooterProps): React.JSX.Element {
         <Col>
           <Title className='text-primary'>{t('generics.phone')}</Title>
           <P12 className='text-primary'>{'06 63 00 13 70'}</P12>
+          <P12 className='text-primary'>{'06 26 85 62 66'}</P12>
         </Col>
         <Phone size={isMobile ? 30 : 45} className='md:group-hover:text-red' />
       </ContactRow>

@@ -41,6 +41,7 @@ const Main = tw.div`
   h-screen
   w-screen
   z-0
+  px-5 md:px-0
 `;
 const Filter = tw.div`
   absolute
@@ -103,4 +104,9 @@ const SubTitle = tw(P18)<{ $isAnimated: boolean }>`
   z-20
   rounded-lg
   drop-shadow-lg
+   bg-primary/20
+  backdrop-blur-md
+  rounded
+  px-2
+  py-2
 `;
