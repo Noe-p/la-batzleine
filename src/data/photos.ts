@@ -64,6 +64,15 @@ export const JARDIN: Photo[] = [
     description:
       'Un charmant chemin de pierre traversant le jardin, bordé de fleurs colorées et de verdure.',
   },
+  {
+    filters: [FILTERS.JARDIN],
+    src: '/images/jardin/jardin-7.webP',
+    name: 'vue-du-jardin-6',
+    id: '511a2b7f-c50b-480c-9dea-d94b931c5fe3',
+    alt: 'Chemin de pierre traversant le jardin avec des fleurs',
+    description:
+      'Un charmant chemin de pierre traversant le jardin, bordé de fleurs colorées et de verdure.',
+  },
 ];
 
 export const RDC: Photo[] = [
