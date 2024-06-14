@@ -43,7 +43,7 @@ export function Testimonials(): JSX.Element {
   return (
     <Main id={NavKeys.TESTIMONIALS}>
       <H2 className='mb-5'>{t('testimonials.title')}</H2>
-      <Carousel className='w-full' setApi={setApi}>
+      <Carousel setApi={setApi}>
         {TESTIMONIALS && TESTIMONIALS.length > (isMobile ? 1 : 3) && (
           <Row className='justify-end w-full mt-5'>
             <RowBetween className='justify-end w-full gap-3 '>

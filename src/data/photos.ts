@@ -139,6 +139,24 @@ export const RDC: Photo[] = [
     description:
       'Une entrée accueillante et spacieuse au rez-de-chaussée, avec un grand placard et un miroir.',
   },
+  {
+    filters: [FILTERS.RDC],
+    src: '/images/rdc/rdc-8.webP',
+    name: 'vue-du-rdc-8',
+    id: 'bige3dih-fcd1-9ifg-gfhj-ej3d4e5i5m5j',
+    alt: 'Salon lumineux au rez-de-chaussée',
+    description:
+      'Un salon lumineux et spacieux situé au rez-de-chaussée, avec des meubles modernes et une grande fenêtre.',
+  },
+  {
+    filters: [FILTERS.RDC],
+    src: '/images/rdc/rdc-9.webP',
+    name: 'vue-du-rdc-9',
+    id: 'chjb4ejg-gde2-ahj1-hgik-fk4e5f6j6n6k',
+    alt: 'Cuisine ouverte moderne au rez-de-chaussée',
+    description:
+      "Une cuisine ouverte et moderne au rez-de-chaussée, équipée de tous les appareils nécessaires et d'un grand îlot central.",
+  },
 ];
 
 export const ETAGE1: Photo[] = [
